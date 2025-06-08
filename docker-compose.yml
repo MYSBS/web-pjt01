@@ -12,11 +12,11 @@ services:
 
   nginx:
     build: ./nginx
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
     ports:
       - "443:443"
       - "80:80"
     depends_on:
       - backend
       - frontend
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt:ro
