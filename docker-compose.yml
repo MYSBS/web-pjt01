@@ -2,7 +2,7 @@ services:
   backend:
     build: ./backend
     environment:
-      - DJANGO_SETTINGS_MODULE=mypjt.settings.production
+      - DJANGO_SETTINGS_MODULE=mypjt.settings
       - SECRET_KEY=django-insecure-8ae=1thie9jmq8y#%kfv16q$r37wm=uqj-ur1&e)b)z0!baltb
 
   frontend:
