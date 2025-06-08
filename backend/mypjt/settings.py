@@ -224,3 +224,15 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+# settings.py
+CSRF_TRUSTED_ORIGINS = [
+    'https://amuredo.me',
+    'https://www.amuredo.me',
+    'https://34.47.115.134'  # 현재 서버 IP
+]
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    'https://amuredo.me',
+    'https://www.amuredo.me',
+    'https://34.47.115.134'
+]
