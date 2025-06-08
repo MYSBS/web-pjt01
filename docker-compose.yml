@@ -1,32 +1,40 @@
 version: '3.8'
+
 services:
-  django:
-    build:
-      context: ./backend
+  backend:
+    build: ./backend
     volumes:
-      - static_volume:/app/static
-    expose:
-      - "8000"
-    env_file:
-      - ./backend/.env
+      - ./backend:/app
+    environment:
+      - DJANGO_SETTINGS_MODULE=your_django_project.settings.production
+      - SECRET_KEY=your-secret-key
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
+    depends_on:
+      - db
 
-  vue:
-    build:
-      context: .
-      dockerfile: frontend/Dockerfile
-    expose:
-      - "80"
-
-  nginx:
-    image: nginx:stable-alpine
+  frontend:
+    build: ./frontend
     ports:
       - "80:80"
-    volumes:
-      - static_volume:/app/backend/static
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
-      - django
-      - vue
+      - backend
+
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "443:443"
+      - "80:80"
+    depends_on:
+      - backend
+      - frontend
 
 volumes:
-  static_volume:
+  postgres_data:
