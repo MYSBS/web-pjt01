@@ -177,18 +177,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+# STATIC_URL = "/static/"
+
+# # 프로젝트 공용으로 관리하는 static 파일 폴더
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",   
+# ]
+
+# # collectstatic 명령어로 모두 모을 디렉터리
+# STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# MEDIA_URL = "/media/"
+# MEDIA_ROOT = BASE_DIR / "media"
+###
+STATICFILES_DIRS = [ BASE_DIR / "static" ]
+
 STATIC_URL = "/static/"
-
-# 프로젝트 공용으로 관리하는 static 파일 폴더
-STATICFILES_DIRS = [
-    BASE_DIR / "static",   
-]
-
-# collectstatic 명령어로 모두 모을 디렉터리
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = "/app/staticfiles"
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_ROOT = "/app/media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
