@@ -18,3 +18,5 @@ services:
     depends_on:
       - backend
       - frontend
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
