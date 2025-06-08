@@ -4,8 +4,8 @@ services:
     volumes:
       - ./backend:/app
     environment:
-      - DJANGO_SETTINGS_MODULE=your_django_project.settings.production
-      - SECRET_KEY=your-secret-key
+      - DJANGO_SETTINGS_MODULE=mypjt.settings.production
+      - SECRET_KEY=django-insecure-8ae=1thie9jmq8y#%kfv16q$r37wm=uqj-ur1&e)b)z0!baltb
 
   frontend:
     build: ./frontend
