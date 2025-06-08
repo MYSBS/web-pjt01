@@ -222,10 +222,5 @@ CSRF_TRUSTED_ORIGINS = [
 # 쿠키 등 자격 증명 포함 허용
 CORS_ALLOW_CREDENTIALS = True
 
-
-MIDDLEWARE = ["corsheaders.middleware.CorsMiddleware"] + MIDDLEWARE
-
 CORS_ALLOW_ALL_ORIGINS = True
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
