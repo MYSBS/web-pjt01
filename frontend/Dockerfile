@@ -1,8 +1,9 @@
 # build stage
 FROM node:18 AS build-stage
 WORKDIR /app
-COPY . .
+COPY frontend/package*.json ./    
 RUN npm install
+COPY frontend/ ./              
 RUN npm run build
 
 # production stage
