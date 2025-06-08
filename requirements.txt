@@ -1,9 +1,0 @@
-﻿folium==0.17.0
-matplotlib==3.9.0
-pandas==2.2.2
-requests==2.32.3
-seaborn==0.13.2
-streamlit==1.36.0
-lxml==5.2.2
-html5lib==1.1
-beautifulsoup4==4.12.3
