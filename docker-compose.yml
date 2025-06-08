@@ -12,7 +12,8 @@ services:
 
   vue:
     build:
-      context: ./frontend
+      context: .
+      dockerfile: frontend/Dockerfile
     expose:
       - "80"
 
